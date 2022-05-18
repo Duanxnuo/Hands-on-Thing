@@ -112,8 +112,9 @@ class WideAndDeepModel(keras.models.Model):
     
 model = WideAndDeepModel()
 # dont have to create the inputs 
-# why? why dont specify the shape of the inputs?
-# flip side
+# TODO: why? why dont specify the shape of the inputs?
+# process the inputs before calling the call method
+# flip side:
 # architecture is hidden within the call() method, so Keras cannot easily inspect it, 
 # it cannot save or clone it, and when you call the summary() method, 
 # you only get a list of layers, without any information on how they are connected to each other. 
