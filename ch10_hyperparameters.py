@@ -81,3 +81,27 @@ model = rnd_search_cv.best_estimator_.model
 # it also improves their ability to generalize to new datasets.
 # you can initialize them to the value of the weights and biases of the lower layers of the first network.
 # this is called transfer learning.
+
+## number of neurons per hidden layer
+# paramid structure has been largely abandoned now
+# depending on the dataset, it can sometimes help to make the first hidden layer bigger than the others.
+# A simpler approach is to pick a model with more layers and neurons than you actually need, 
+# then use early stopping or other refularization techniques to prevent it from overfitting
+
+## Learning Rate, Batch Size and Other Hyperparameters
+# learning rate
+# maximum learning rate: the learning rate above which the training algorithm diverges
+# optimal learning rate is about half of the maximum 
+# a simple approach for tuning the learning rate is to start with a large value that makes the training algorithm diverge, 
+# then divide this value by 3 and try again, and repeat until the training algorithm stops diverging.
+
+# optimizer
+# In general the optimal batch size will be lower than 32
+
+# activation function
+# in gen‐ eral, the ReLU activation function will be a good default for all hidden layers. 
+# For the output layer, it really depends on your task.
+
+# using early stopping for the number of training iterations
+
+# “Practical recommendations for gradient-based training of deep architectures,” Yoshua Bengio (2012).
